@@ -1,0 +1,30 @@
+.ce-block:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
+}
+  
+/* Custom styles for elements with the class .cdx-button */
+.cdx-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+  
+.cdx-button:hover {
+    background-color: #0056b3;
+}
+  
+/* Add more styles as needed for .cdx-button */
+.ce-toolbar__plus{
+    background-color: #acafb2;
+}
+
+.ce-toolbar__plus:hover{
+    background-color: #7ba7d6;
+}
