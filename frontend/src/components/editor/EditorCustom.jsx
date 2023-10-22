@@ -1,12 +1,16 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import "./EditBlog.css";
 import EditorJS from "@editorjs/editorjs";
 import { toolOptions } from "./EditorConfig";
 
-
-export default function EditBlog({editorInstance, data=null}) {
-  // const editorInstance = useRef();
-  // const data = useLoaderData();
+export default function EditBlog({
+  editorInstance,
+  data = null,
+  readOnly = false,
+}) {
+  
+  const customOption = readOnly ? { readOnly: true } : { autofocus: true };
 
   const setEditorFromLocalStorage = () => {
     const storedContent = localStorage.getItem("editor-content");
@@ -24,8 +28,8 @@ export default function EditBlog({editorInstance, data=null}) {
           editorInstance.current = editor;
           setEditorFromLocalStorage();
         },
-        autofocus: true,
-        // data: DEFAULT_INITIAL_DATA, //used to provide default data
+        ...customOption,
+        // autofocus: true,
         onChange: async () => {
           let content = await editor.saver.save();
           const data = JSON.stringify(content);
@@ -43,17 +47,18 @@ export default function EditBlog({editorInstance, data=null}) {
 
   useEffect(() => {
     if (data) {
-      console.log("server", data);
-      localStorage.setItem("editor-content", JSON.stringify(data));
+      localStorage.setItem("editor-content", data.content);
     }
-
     initializeEditor();
     return destroyEditor();
   }, []);
 
-  return (
-    <>
-      <div id="editorjs"></div>
-    </>
-  );
+  return <div id="editorjs"></div>;
 }
+
+// Define PropTypes
+EditBlog.propTypes = {
+  editorInstance: PropTypes.object,
+  data: PropTypes.object,
+  readOnly: PropTypes.bool,
+};
