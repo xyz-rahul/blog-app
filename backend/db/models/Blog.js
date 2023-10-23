@@ -11,7 +11,7 @@ const Blog = sequelize.define('Blog', {
         allowNull: false,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     content: {
