@@ -13,7 +13,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-left-list-item">
-              <NavLink to="/new-blog" className="nav-link">
+              <NavLink to="/blogs/create" className="nav-link">
                 Write
               </NavLink>
             </li>
