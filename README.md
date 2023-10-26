@@ -24,13 +24,13 @@
 
 - **React Router DOM**: The application uses React Router DOM for handling client-side routing. This allows for seamless navigation between different sections of the app, including viewing blogs and creating new ones, all without requiring a full page reload.
 
-
 ### Home Page
-![home](https://github.com/xyz-rahul/blog-app/assets/77181531/245be30d-232b-444f-b524-fd461302907e)
+![home](https://github.com/xyz-rahul/blog-app/assets/77181531/e10d5ce4-18f9-459f-8f47-efbb257a222b)
 ### Create Page
-![create](https://github.com/xyz-rahul/blog-app/assets/77181531/c9353ad2-eb44-4165-82f8-f4d0f8454a18)
+![create](https://github.com/xyz-rahul/blog-app/assets/77181531/712db558-232b-4911-8d1c-3a193572117f)
 ### View Page
-![view](https://github.com/xyz-rahul/blog-app/assets/77181531/a4411c4d-eb6a-497b-ad3e-9fd40205d3e2)
+![view](https://github.com/xyz-rahul/blog-app/assets/77181531/217f56cf-5bfb-4ddf-831e-126c3fa6f605)
+
 
 
 ## Setup
