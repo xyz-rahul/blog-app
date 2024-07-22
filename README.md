@@ -1,8 +1,12 @@
 # Blog App 
 
-- **Next.js**: React framework for building fast web applications.
-- **Firebase**: Google's platform for developing mobile and web apps, offering services like authentication and real-time database.
-
+## Features Implemented:
+- **User Authentication**: Integrated Firebase Authentication
+- **Rich Text Editing**: Utilized PlateJS
+- **Search Functionality**: Implemented Firebase Firestore querying
+## Technologies Used:
+- **ReactJS**: ReactJS with functional components, hooks, and state management 
+- **Firebase**: Firebase for Authentication, Realtime Database
 
 <img width="1440" alt="Screenshot 2024-04-03 at 9 37 40 PM" src="https://github.com/xyz-rahul/blog-app/assets/77181531/766e5ce7-ca1a-406d-92bb-c54876a9adce">
 
