@@ -12,6 +12,7 @@ import Root from "./components/Root";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import NewPost from "./pages/NewPost";
+import NotFound403 from "./pages/NotFound403";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "*",
+        element: <NotFound403 />,
       },
     ],
   },
