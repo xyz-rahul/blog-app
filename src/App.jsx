@@ -12,7 +12,7 @@ import Root from "./components/Root";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import NewPost from "./pages/NewPost";
-import NotFound403 from "./pages/NotFound403";
+import NotFound404 from "./pages/NotFound404";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 
@@ -59,7 +59,7 @@ export default function App() {
         },
         {
           path: "*",
-          element: <NotFound403 />,
+          element: <NotFound404 />,
         },
       ],
     },
