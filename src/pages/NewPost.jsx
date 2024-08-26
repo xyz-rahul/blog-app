@@ -42,14 +42,17 @@ export default function NewPost() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="editor">
+      <div className="item">
         <label htmlFor="title">Title</label>
         <input
           type="text"
           onChange={(e) => setBlogTitle(e.target.value)}
           defaultValue={getBlogTitle()}
         ></input>
+      </div>
+
+      <div className="item">
         <label htmlFor="summary">Summary</label>
         <input
           type="text"
@@ -57,7 +60,10 @@ export default function NewPost() {
           defaultValue={getBlogSummary()}
         ></input>
       </div>
-      <Editor />
+
+      <div className="rich-text-editor ">
+        <Editor />
+      </div>
       <button type="submit" onClick={onBlogSubmit}>
         Submit
       </button>

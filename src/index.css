@@ -23,9 +23,6 @@ form button {
   border-radius: 1em;
 }
 
-.editor {
-  display: flex;
-}
 .authentication-form {
   background: grey;
   padding: 2rem;
@@ -104,7 +101,8 @@ a {
   color: inherit;
 }
 
-.home, .dashboard {
+.home,
+.dashboard {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -152,4 +150,45 @@ a {
 .card-summary {
   font-size: 0.9em;
   color: #555;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ql-container {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  min-height: 300px;
+  justify-content: center;
+  width: 99%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fff;
 }
