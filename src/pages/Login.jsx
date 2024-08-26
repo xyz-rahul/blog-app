@@ -1,33 +1,27 @@
 import React, { useState } from "react";
 
 import { auth } from "../services/firebase";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [userDetail, setUserDetail] = useState({
     email: null,
     password: null,
   });
+  const navigate = useNavigate();
 
   function submitSignUpForm(e) {
     e.preventDefault();
-    console.log(userDetail);
     signInWithEmailAndPassword(auth, userDetail.email, userDetail.password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
-        console.log("user created", user);
-        // ...
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("can not create user ", errorCode, errorMessage);
-        // ..
       });
   }
 

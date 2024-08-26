@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import { auth } from "../services/firebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [userDetail, setUserDetail] = useState({
@@ -10,21 +11,28 @@ export default function SignUp() {
     password: null,
   });
 
+  const navigate = useNavigate();
   function submitSignUpForm(e) {
     e.preventDefault();
-    console.log(userDetail);
+
     createUserWithEmailAndPassword(auth, userDetail.email, userDetail.password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
-        console.log("user created", user);
-        // ...
+
+        updateProfile(user, {
+          displayName: userDetail.name,
+        })
+          .then(() => {})
+          .catch((error) => {
+            // An error occurred
+            // ...
+          });
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("can not create user ", errorCode, errorMessage);
-        // ..
       });
   }
 
