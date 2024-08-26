@@ -37,9 +37,12 @@ export default function SignUp() {
   }
 
   return (
-    <div>
-      <form className="authentication-form" onSubmit={submitSignUpForm}>
-        <div>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={submitSignUpForm}>
+        <div className="form-item">
+          <h1>SignUp</h1>
+        </div>
+        <div className="form-item">
           <label htmlFor="name">name</label>
           <input
             id="name"
@@ -50,7 +53,7 @@ export default function SignUp() {
           ></input>
         </div>
 
-        <div>
+        <div className="form-item">
           <label htmlFor="email">email</label>
           <input
             id="email"
@@ -60,7 +63,7 @@ export default function SignUp() {
             }
           ></input>
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="password">password</label>
           <input
             id="password"
@@ -71,8 +74,15 @@ export default function SignUp() {
           ></input>
         </div>
 
-        <div>
-          <button type="submit">submit</button>
+        <div className="form-item">
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </div>
+        <div className="form-item">
+          <p>
+            <a href={"/login"}>login</a>
+          </p>
         </div>
       </form>
     </div>

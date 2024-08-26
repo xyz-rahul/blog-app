@@ -26,9 +26,12 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <form className="authentication-form" onSubmit={submitSignUpForm}>
-        <div>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={submitSignUpForm}>
+        <div className="form-item">
+          <h1>Login</h1>
+        </div>
+        <div className="form-item">
           <label htmlFor="email">email</label>
           <input
             id="email"
@@ -38,7 +41,7 @@ export default function Login() {
             }
           ></input>
         </div>
-        <div>
+        <div className="form-item">
           <label htmlFor="password">password</label>
           <input
             id="password"
@@ -49,8 +52,16 @@ export default function Login() {
           ></input>
         </div>
 
-        <div>
-          <button type="submit">submit</button>
+        <div className="form-item">
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </div>
+
+        <div className="form-item">
+          <p>
+            <a href={"/sign-up"}>sign up</a>
+          </p>
         </div>
       </form>
     </div>
