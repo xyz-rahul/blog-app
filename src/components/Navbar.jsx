@@ -16,9 +16,7 @@ export default function Navbar() {
       </div>
 
       <div>
-        <ul>
-          <Link to={"new-post"}>New Post</Link>
-        </ul>
+        <ul>{user && <Link to={"new-post"}>New Post</Link>}</ul>
         <div>
           {user && <h1 className="navbar-profile-name">{user.displayName}</h1>}
           {!user && <button onClick={() => navigate("/login")}>Login</button>}
