@@ -14,3 +14,28 @@ nav {
 li {
   display: inline;
 }
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+form input {
+  font-weight: 400;
+  padding: 0.5rem;
+  border-radius: 1em;
+}
+form button {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 1em;
+}
+
+.authentication-form {
+  background: grey;
+  padding: 2rem;
+  margin: 1em;
+  font-weight: 600;
+}
