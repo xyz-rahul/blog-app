@@ -6,6 +6,25 @@ import { db } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthenticationContext } from "../context/Authentication";
 
+function validateForm({ title, summary, content }) {
+  if (title.length < 10) {
+    alert("Title must be at least 10 characters long.");
+    return false;
+  }
+
+  if (content.length < 1000) {
+    alert("Content must be at least 1000 characters long.");
+    return false;
+  }
+
+  if (summary.length < 100) {
+    alert("Summary must be at least 100 characters long.");
+    return false;
+  }
+
+  return true;
+}
+
 export default function NewPost() {
   const {
     getBlogContent,
@@ -19,6 +38,7 @@ export default function NewPost() {
   const { user, signOut } = useContext(AuthenticationContext);
 
   const author = user.displayName;
+  const uid = user.uid;
   const navigate = useNavigate();
 
   async function onBlogSubmit() {
@@ -26,18 +46,20 @@ export default function NewPost() {
     const title = getBlogTitle();
     const content = getBlogContent();
     const summary = getBlogSummary();
-
-    try {
-      const docRef = await addDoc(collection(db, "blogs"), {
-        title,
-        content,
-        author,
-        summary,
-      });
-      console.log("Document written with ID: ", docRef.id);
-      navigate(`/blog/${docRef.id}`);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    if (validateForm({ title, content, summary })) {
+      try {
+        const docRef = await addDoc(collection(db, "blogs"), {
+          uid,
+          title,
+          content,
+          author,
+          summary,
+        });
+        console.log("Document written with ID: ", docRef.id);
+        navigate(`/blog/${docRef.id}`);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
     }
   }
 

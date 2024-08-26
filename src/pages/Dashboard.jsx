@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { db } from "../services/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import BlogCard from "../components/BlogCard";
+import { AuthenticationContext } from "../context/Authentication";
 
 export default function Dashboard() {
   const [blogs, setBlogs] = useState([]);
+  const { user, signOut } = useContext(AuthenticationContext);
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const querySnapshot = await getDocs(collection(db, "blogs"));
+      const q = query(
+        collection(db, "blogs"),
+        where("uid", "==", user.uid),
+      );
+      const querySnapshot = await getDocs(q);
+
+      // const querySnapshot = await getDocs(collection(db, "blogs"));
       const blogsData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -17,7 +25,7 @@ export default function Dashboard() {
     };
 
     fetchBlogs();
-  }, []);
+  }, [user]);
 
   return (
     <div className="dashboard">
