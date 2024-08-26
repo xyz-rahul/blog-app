@@ -7,7 +7,6 @@ import { BlogContext } from "../context/BlogContext";
 export default function Editor({ initialValue, readOnly = false }) {
   const { getBlogContent, getBlogTitle, setBlogContent, setBlogTitle } =
     useContext(BlogContext);
-    useEffect(()=>{console.log("ini ",initialValue)},[])
 
   const modules = {
     toolbar: [
