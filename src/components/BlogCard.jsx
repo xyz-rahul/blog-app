@@ -11,7 +11,7 @@ export default function BlogCard({ id, title, summary, author }) {
             <p class="card-author">{author}</p>
           </div>
           <div class="card-right">
-            <p class="card-summary">{author}</p>
+            <p class="card-summary">{summary}</p>
           </div>
         </div>
       </div>
