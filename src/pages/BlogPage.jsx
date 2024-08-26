@@ -29,9 +29,8 @@ export default function BlogPage() {
 
   return (
     <div>
-      <div>
-        <label htmlFor="title">Title</label>
-        <h1>{blog.title}</h1>
+      <div className="blog-page">
+        <h1 className="blog-page-title">{blog.title}</h1>
       </div>
       <Editor readOnly={true} initialValue={blog.content} />
     </div>
