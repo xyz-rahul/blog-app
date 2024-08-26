@@ -33,6 +33,9 @@ form button {
   border-radius: 1em;
 }
 
+.editor {
+    display: flex;
+}
 .authentication-form {
   background: grey;
   padding: 2rem;
