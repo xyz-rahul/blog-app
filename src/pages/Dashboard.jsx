@@ -3,7 +3,7 @@ import { db } from "../services/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import BlogCard from "../components/BlogCard";
 
-export default function Home() {
+export default function Dashboard() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {

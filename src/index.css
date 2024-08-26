@@ -34,11 +34,16 @@ form button {
 }
 
 .editor {
-    display: flex;
+  display: flex;
 }
 .authentication-form {
   background: grey;
   padding: 2rem;
   margin: 1em;
   font-weight: 600;
+}
+.blog-card {
+  margin: 1rem;
+  background: skyblue;
+  padding: 1rem;
 }

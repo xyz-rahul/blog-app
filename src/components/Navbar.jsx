@@ -8,6 +8,7 @@ export default function Navbar() {
     <nav>
       <ul>
         <Link to={"/"}>Home</Link>
+        <Link to={"dashboard"}>Dashboard</Link>
         <Link to={"about-us"}>About Us</Link>
       </ul>
       <ul>

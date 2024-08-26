@@ -17,6 +17,8 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 
 import { AuthenticationContext } from "./context/Authentication";
+import BlogPage from "./pages/BlogPage";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   const { user } = useContext(AuthenticationContext);
@@ -30,8 +32,17 @@ export default function App() {
           element: <Home />,
         },
         {
+          path: "/blog/:id",
+          element: <BlogPage />,
+        },
+        {
           path: "/new-post",
           element: <NewPost />,
+          loader: () => (!user ? redirect("/") : null),
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
           loader: () => (!user ? redirect("/") : null),
         },
         {

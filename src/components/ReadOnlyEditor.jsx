@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
-import { BlogContext } from "../context/BlogContext";
+import BlogContext from "../context/BlogContext";
 
 export default function Editor({ initialValue, readOnly = false }) {
-  const { getBlogContent, getBlogTitle, setBlogContent, setBlogTitle } =
-    useContext(BlogContext);
-    useEffect(()=>{console.log("ini ",initialValue)},[])
+  const [value, setValue] = useState(initialValue);
+  const { getBlogDetail, setBlogDetail } = useContext(BlogContext);
 
   const modules = {
     toolbar: [
@@ -39,10 +37,10 @@ export default function Editor({ initialValue, readOnly = false }) {
 
   return (
     <ReactQuill
-      value={initialValue}
       readOnly={readOnly}
       theme="snow"
-      onChange={setBlogContent}
+      value={getBlogDetail()}
+      onChange={setBlogDetail}
       modules={modules}
       formats={formats}
     />
