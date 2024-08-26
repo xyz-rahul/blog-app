@@ -20,7 +20,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <div className="dashboard">
       {blogs.map((blog) => (
         <BlogCard
           key={blog.id}
