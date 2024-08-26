@@ -1,8 +1,15 @@
-# React + Vite
+Blog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features Implemented:
 
-Currently, two official plugins are available:
+* User Authentication: Integrated Firebase Authentication
+* Rich Text Editing: Utilized Quill Js
+* CRUD operation
+* Personal Dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used:
+* ReactJS: ReactJS with functional components, hooks, and state management
+* Firebase: Firebase for Authentication, Realtime Database
+
+  <img width="1440" alt="Screenshot 2024-08-26 at 22 43 02" src="https://github.com/user-attachments/assets/88f433ff-1a97-4e47-8e86-ae0ee1b7dbd6">
+<img width="1440" alt="Screenshot 2024-08-26 at 22 52 09" src="https://github.com/user-attachments/assets/f2a55ffd-b07c-4956-a13d-0662ddf0ccfd">
